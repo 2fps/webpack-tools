@@ -1,11 +1,5 @@
-import 'babel-polyfill';
-
 import './script/a.js';
-
-
 import './css/a.css';
-import './less/a.less';
-import './scss/a.scss';
 
 
 import React from 'react';
