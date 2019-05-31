@@ -7,6 +7,7 @@ const config = {
         filename: 'bundle.js',
         path: __dirname + '/dist'
     },
+    devtool: "source-map",
     module: {
         rules: [{
             test: /\.css$/,
