@@ -1,0 +1,9 @@
+node_modules
+webpack.config.js
+
+webpack.config.base.js
+webpack.config.dev.js
+webpack.config.prod.js
+
+# fonticon js文件
+src/assets/font/iconfont.js

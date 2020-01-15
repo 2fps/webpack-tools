@@ -1,16 +1,19 @@
 {
     "presets": [
-        "env",
-        "react",
-        "stage-0"
+        "@babel/preset-env",
+        "@babel/preset-react"
     ],
-    "plugins": [[
-        "transform-runtime",
-        {
-          "helpers": false,
-          "polyfill": false,
-          "regenerator": true,
-          "moduleName": "babel-runtime"
-        }
-    ]]
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "helpers": false, 
+                "regenerator": true 
+            }
+        ],
+        "react-hot-loader/babel",
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        "dynamic-import-webpack",
+        "@babel/plugin-proposal-class-properties"
+    ]
 }
