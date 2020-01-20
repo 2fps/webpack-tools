@@ -1,11 +1,11 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const webpack = require('webpack');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const baseWebpackConfig = require('./webpack.config.base');
-const apiMocker = require('webpack-api-mocker');
+const path = require('path')
+const merge = require('webpack-merge')
+const webpack = require('webpack')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const baseWebpackConfig = require('./webpack.config.base')
+const apiMocker = require('webpack-api-mocker')
 
-const port = 9000;
+const port = 8000
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
@@ -19,14 +19,14 @@ module.exports = merge(baseWebpackConfig, {
     inline: true, // 实时刷新
     compress: true, // Enable gzip compression for everything served
     overlay: true, // Shows a full-screen overlay in the browser
-    // stats: 'errors-only',//To show only errors in your bundle
-    // open: true, //When open is enabled, the dev server will open the browser.
+    stats: 'errors-only', // To show only errors in your bundle
+    open: true, // When open is enabled, the dev server will open the browser.
     quiet: true,
     proxy: {
       '/datarecognize': {
         'target': 'http://47.111.24.30:8082/',
         'changeOrigin': true,
-        'pathRewrite': { '^/api' : '' }
+        'pathRewrite': { '^/api': '' }
       }
     },
     before(app) {

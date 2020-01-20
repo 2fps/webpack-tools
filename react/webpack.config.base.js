@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const HappyPack = require('happypack')
 const os = require('os')
 
@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     chunkFilename: 'js/[name].[hash:7].js',
-    filename: 'js/[name].[hash:7].js',
+    filename: 'js/[name].[hash:7].js'
   },
   resolve: {
     // 设置别名
@@ -24,7 +24,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: 'all'
     },
     runtimeChunk: true
   },
@@ -56,10 +56,10 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
-        use: 'happypack/loader?id=babel',
+        use: 'happypack/loader?id=babel'
         // use: [{
         //     loader: 'babel-loader'
-        // }],
+        // }]
       }, /*  {
           test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
@@ -80,7 +80,7 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            limit: 8192,
+            limit: 8192
           }
         }
       }, {
@@ -93,7 +93,7 @@ module.exports = {
           }, {
             loader: 'postcss-loader',
             options: {
-              plugins:[
+              plugins: [
                 require('autoprefixer')
               ]
             }
@@ -123,7 +123,7 @@ module.exports = {
           }, {
             loader: 'postcss-loader',
             options: {
-              plugins:[
+              plugins: [
                 require('autoprefixer')
               ]
             }
@@ -141,7 +141,7 @@ module.exports = {
       ignoreOrder: true
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),//模板
+      template: path.resolve(__dirname, 'public', 'index.html'), // 模板
       filename: 'index.html',
       inject: true, // 允许插件修改哪些内容，包括head与body
       hash: true, // 是否添加hash值
