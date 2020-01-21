@@ -3,7 +3,10 @@
     "module": "commonjs",
     "sourceMap": true,
     "target": "es6",
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     // "lib": ["es6", "dom"],
     "jsx": "react",
     "allowJs": true,

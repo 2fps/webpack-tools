@@ -60,6 +60,6 @@ module.exports = merge(baseWebpackConfig, {
   //         }),
   //     ],
   // },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   plugins
 })
